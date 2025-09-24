@@ -86,7 +86,7 @@ export const ChatPage = () => {
                 sender: currentUser,
                 content: input,
                 roomId: roomId,
-                timestamp: new Date(), // ✨ NEW: Timestamp added here
+                timestamp: new Date(), 
             };
             stompClient.publish({
                 destination: `/app/sendMessage/${roomId}`,
@@ -103,7 +103,7 @@ export const ChatPage = () => {
     }, [messages]);
 
     function handleLogout() {
-        // ✅ FIX: Added a check to prevent crashing if client is null
+        
         if (stompClient) {
             stompClient.deactivate();
         }
@@ -139,7 +139,7 @@ export const ChatPage = () => {
                                 <div className='flex flex-col'>
                                     <p className='text-sm font-bold'>{message.sender}</p>
                                     <p className='text-white break-words'>{message.content}</p>
-                                    {/* ✨ NEW: Timestamp is rendered here */}
+                                  
                                     {message.timestamp && (
                                         <span className='text-xs text-gray-300 self-end mt-1'>
                                             {new Date(message.timestamp).toLocaleString('en-US', {

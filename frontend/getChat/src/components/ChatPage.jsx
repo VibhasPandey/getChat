@@ -34,7 +34,7 @@ export const ChatPage = () => {
                 }
             } catch (error) {
                 console.error("Failed to load messages", error);
-                toast.error("Could not load previous messages.");
+                
             }
         }
         loadMessages();

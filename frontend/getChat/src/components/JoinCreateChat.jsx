@@ -71,7 +71,7 @@ export const JoinCreateChat = () => {
                     const res=await createRoomApi(details.roomId);
                     console.log(res);
                     toast.success("Room created Successfully !!");
-                    toast.success("Happy Chatting..")
+                    
                     setCurrentUser(details.userName);
                     setRoomId(details.roomId);
                     setConnected(true);
